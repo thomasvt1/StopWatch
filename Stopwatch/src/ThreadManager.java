@@ -11,7 +11,14 @@ public class ThreadManager extends Thread {
 	
 	
 	private void loop() {
-		while (loop)
+		while (loop) {
 			App.timeKeeper.updateUI();
+			try {
+				sleep(2);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+			
 	}
 }

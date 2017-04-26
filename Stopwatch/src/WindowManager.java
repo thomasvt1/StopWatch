@@ -2,6 +2,7 @@ import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JProgressBar;
 
 public class WindowManager {
 	
@@ -29,6 +30,11 @@ public class WindowManager {
 			System.out.println("lblLapTime is NULL");
 		
 		lblTime.setText(min + ":" + sec + ":" + milis);
+	}
+	
+	public void setProgressBar(int perc) {
+		JProgressBar progressBar = (JProgressBar) ft.getComponentByName("progressBar");
+		progressBar.setValue(perc);
 	}
 	
 	public void clearLapTime() {

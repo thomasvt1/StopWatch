@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JProgressBar;
 
 public class Window {
 
@@ -118,6 +119,15 @@ public class Window {
 		JLabel lblLap = new JLabel("Lap");
 		lblLap.setBounds(12, 109, 56, 16);
 		panel.add(lblLap);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBounds(12, 253, 258, 47);
+		progressBar.setName("progressBar");
+		panel.add(progressBar);
+		
+		JLabel lblTime = new JLabel("Time");
+		lblTime.setBounds(12, 13, 56, 16);
+		panel.add(lblTime);
 		
 	}
 }

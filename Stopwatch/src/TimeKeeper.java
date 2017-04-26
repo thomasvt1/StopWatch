@@ -24,6 +24,8 @@ public class TimeKeeper {
 		startTime = System.currentTimeMillis();
 		lapTime = -1;
 		
+		wm.setProgressBar(0);
+		
 		tm = new ThreadManager();
 		tm.start();
 	}
@@ -49,7 +51,24 @@ public class TimeKeeper {
 			startTime = System.currentTimeMillis();
 			System.out.println("startTime == 0");
 		}
+			//startTime/lapTime
+		if (lapTime > 1) {
 			
+			double a = System.currentTimeMillis() - lapTime;
+			double b = lapTime - startTime;
+			
+			double x = a / b;
+			
+			int perc = (int) (x * 100);
+			
+			if (perc > 100) {
+				int q = perc / 100;
+				perc = perc - q * 100;
+			}
+				
+			wm.setProgressBar(perc);
+			}
+		
 		
 		TimeTools tt1 = new TimeTools(startTime);
 		wm.setMainTime(tt1.getMinutes(), tt1.getSeconds(), tt1.getMilis());
